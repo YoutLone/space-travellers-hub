@@ -7,7 +7,10 @@ const links = [
 const NavBar = () => (
   <header className="navbar-container">
     <nav className="nav-bar">
-      <h1>Space Travelers&apos; Hub</h1>
+      <div className="logo">
+        <h1>Space Travelers&apos; Hub</h1>
+        <img src="\resource\planet.png" alt="logo" />
+      </div>
       <ul className="nav-link">
         {links.map((link) => (
           <li key={link.text}>
