@@ -2,7 +2,7 @@ import '../styles/NavBar.css';
 
 const links = [
   { path: '/', text: 'Rockets' },
-  { path: 'missions', text: 'Mission' },
+  { path: 'missions', text: 'Missions' },
   { path: 'my-profile', text: 'My Profile' },
 ];
 
