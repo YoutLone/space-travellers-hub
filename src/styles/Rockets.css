@@ -1,0 +1,47 @@
+.rockets-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0 3rem 0;
+  gap: 1rem;
+  width: 100%;
+}
+
+.rocket-list {
+  width: 90%;
+  padding: 0 1.5rem;
+}
+
+.rocket-item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.rocket-item > img {
+  width: 20%;
+  height: 10rem;
+}
+
+.rocket-info {
+  width: 80%;
+}
+
+.rocket-info > h3 {
+  margin: 0;
+}
+
+.rocket-info > p {
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: justify;
+}
+
+.btn-reserve {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #0290ff;
+  color: #fff;
+  border-radius: 0.25rem;
+  border: none;
+}
