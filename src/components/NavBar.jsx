@@ -1,8 +1,4 @@
-const links = [
-  { text: 'Rockets' },
-  { text: 'Mission' },
-  { text: 'My Profile' },
-];
+import NavLink from './NavLink';
 
 const NavBar = () => (
   <header className="navbar-container">
@@ -11,13 +7,7 @@ const NavBar = () => (
         <h1>Space Travelers&apos; Hub</h1>
         <img src="\resource\planet.png" alt="logo" />
       </div>
-      <ul className="nav-link">
-        {links.map((link) => (
-          <li key={link.text}>
-            {link.text}
-          </li>
-        ))}
-      </ul>
+      <NavLink />
     </nav>
   </header>
 );
