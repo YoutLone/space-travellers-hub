@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import '../styles/missions.css';
 
 function Missions() {
   const missionList = useSelector((state) => state.missions.Missions);
