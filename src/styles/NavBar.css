@@ -1,0 +1,57 @@
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-bar {
+  width: 90%;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.nav-bar > .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-bar > .logo > h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.nav-bar > .logo > img {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-bar > .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-bar > .nav-link > li {
+  color: #0290ff;
+  list-style: none;
+}
+
+li :-webkit-any-link {
+  text-decoration: none;
+  color: #0290ff;
+}
+
+li:active :-webkit-any-link {
+  text-decoration: underline;
+}
+
+.nav-bar > .nav-link > li:last-child {
+  padding-left: 1rem;
+  border-left: 2px solid #969595;
+}
