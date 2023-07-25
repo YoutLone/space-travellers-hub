@@ -42,13 +42,17 @@
   list-style: none;
 }
 
+li:active :-webkit-any-link {
+  text-decoration: underline;
+}
+
+li:visited :-webkit-any-link {
+  text-decoration: underline;
+}
+
 li :-webkit-any-link {
   text-decoration: none;
   color: #0290ff;
-}
-
-li:active :-webkit-any-link {
-  text-decoration: underline;
 }
 
 .nav-bar > .nav-link > li:last-child {
