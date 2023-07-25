@@ -1,14 +1,16 @@
+import { Link } from 'react-router-dom';
+
 const links = [
-  { text: 'Rockets' },
-  { text: 'Mission' },
-  { text: 'My Profile' },
+  { path: '/', text: 'Rockets' },
+  { path: 'missions', text: 'Missions' },
+  { path: 'my-profile', text: 'My Profile' },
 ];
 
 const NavLink = () => (
   <ul className="nav-link">
     {links.map((link) => (
       <li key={link.text}>
-        {link.text}
+        <Link to={link.path}>{link.text}</Link>
       </li>
     ))}
   </ul>
