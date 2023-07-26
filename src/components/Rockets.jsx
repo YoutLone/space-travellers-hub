@@ -24,7 +24,10 @@ const Rockets = () => {
             <div className="rocket-info">
               <h3 className="rocket-name">{item.name}</h3>
               <p>{item.description}</p>
-              <Buttons rocketId={item.id} />
+              <Buttons
+                rocketId={item.id}
+                reservedStatus={item.reserved}
+              />
             </div>
           </div>
         </section>
