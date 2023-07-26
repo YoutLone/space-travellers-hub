@@ -17,6 +17,12 @@
   width: 50%;
 }
 
+.mission-table {
+  width: 90%;
+  padding: 20px 20px;
+  border: 1px solid #000;
+}
+
 .rocket-profile {
   width: 50%;
 }
