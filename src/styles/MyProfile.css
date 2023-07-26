@@ -1,5 +1,5 @@
 .profile-container {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -19,4 +19,13 @@
 
 .rocket-profile {
   width: 50%;
+}
+
+.profile-list-rocket {
+  width: 100%;
+}
+
+.profile-list-rocket > tr > td {
+  padding: 1rem;
+  border: 1px solid #989797;
 }
