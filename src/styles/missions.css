@@ -10,7 +10,7 @@
 }
 
 .mission:nth-child(even) {
-  background-color: #f3f3f3;
+  background-color: #eeeded;
 }
 
 table {
@@ -25,7 +25,7 @@ th {
 
 .not-member {
   width: 130px;
-  background-color: #a7a2a2;
+  background-color: #8f8c8c;
   border: none;
   outline: none;
   border-radius: 4px;
@@ -40,4 +40,25 @@ th {
   padding: 10px 4px;
   border: 1px solid #000;
   color: black;
+  cursor: pointer;
+}
+
+.leave-member {
+  width: 8rem;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 3px;
+  border: 1px solid red;
+  color: red;
+  cursor: pointer;
+}
+
+.active-member {
+  width: 8rem;
+  background-color: rgb(43, 7, 250);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  padding: 5px 3px;
+  color: #fff;
 }
