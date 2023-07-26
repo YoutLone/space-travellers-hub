@@ -16,10 +16,24 @@ export const fetchMissions = createAsyncThunk('missions/getmissions', async () =
     throw Error('Failed to fetch books');
   }
 });
+
 const missionSlice = createSlice({
   name: 'missionlist',
   initialState,
-  reducers: {},
+  reducers: {
+    joinMission: (state, action) => {
+      const missionId = action.payload;
+      const missions = state.Missions.map((mission) => (mission.mission_id === missionId
+        ? { ...mission, joined: true } : mission));
+      state.Missions = missions;
+    },
+    leaveMission: (state, action) => {
+      const missionId = action.payload;
+      const missions = state.Missions.map((mission) => (mission.mission_id === missionId
+        ? { ...mission, joined: false } : mission));
+      state.Missions = missions;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMissions.pending, (state) => {
@@ -41,4 +55,5 @@ const missionSlice = createSlice({
   },
 });
 
+export const { joinMission, leaveMission } = missionSlice.actions;
 export default missionSlice.reducer;
