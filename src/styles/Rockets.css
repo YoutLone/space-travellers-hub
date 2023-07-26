@@ -45,3 +45,12 @@
   border-radius: 0.25rem;
   border: none;
 }
+
+.btn-cancel {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #989797;
+  border-radius: 0.25rem;
+  border: 1px solid #989797;
+}
