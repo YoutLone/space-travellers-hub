@@ -1,33 +1,47 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const initialState = [
-  {
-    id: 'item1',
-    name: 'Falcon 1',
-    type: 'rocket',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    flickr_images: ['https://imgur.com/DaCfMsj.jpg', 'https://imgur.com/azYafd8.jpg'],
+const url = 'https://api.spacexdata.com/v4/rockets';
+
+const initialState = {
+  Rockets: [],
+  isLoading: true,
+};
+
+export const fetchRockets = createAsyncThunk(
+  'rockets/fetchRockets',
+  async () => {
+    try {
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      throw Error('Error fetching rockets');
+    }
   },
-  {
-    id: 'item2',
-    name: 'Falcon 2',
-    type: 'rocket',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    flickr_images: ['https://imgur.com/DaCfMsj.jpg', 'https://imgur.com/azYafd8.jpg'],
-  },
-  {
-    id: 'item3',
-    name: 'Falcon 3',
-    type: 'rocket',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    flickr_images: ['https://imgur.com/DaCfMsj.jpg', 'https://imgur.com/azYafd8.jpg'],
-  },
-];
+);
 
 const RocketsSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchRockets.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchRockets.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.Rockets = action.payload.map((rocket) => ({
+          id: rocket.id,
+          name: rocket.name,
+          description: rocket.description,
+          flickr_images: rocket.flickr_images,
+        }));
+      })
+      .addCase(fetchRockets.rejected, (state) => {
+        state.isLoading = false;
+      });
+  },
 });
 
 export default RocketsSlice.reducer;
