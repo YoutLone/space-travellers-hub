@@ -1,0 +1,28 @@
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile {
+  width: 90%;
+  margin: 0 3rem;
+  padding: 0 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.mission-profile {
+  width: 50%;
+}
+
+.mission-table {
+  width: 90%;
+  padding: 20px 20px;
+  border: 1px solid #000;
+}
+
+.rocket-profile {
+  width: 50%;
+}
