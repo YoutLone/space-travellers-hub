@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import Mission from '../Mission';
+import Mission from '../components/Mission';
 import '@testing-library/jest-dom/extend-expect';
 
 const mockStore = configureStore([]);

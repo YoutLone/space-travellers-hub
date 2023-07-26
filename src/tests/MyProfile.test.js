@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import MyProfile from '../MyProfile';
+import MyProfile from '../components/MyProfile';
 
 // Mocking the RocketProfile and MissionProfile components
 /* eslint-disable */
-jest.mock('../RocketProfile', () => () => <div data-testid="rocket-profile">Mocked RocketProfile</div>);
+jest.mock('../components/RocketProfile', () => () => <div data-testid="rocket-profile">Mocked RocketProfile</div>);
 /* eslint-disable */
-jest.mock('../MissionProfile', () => () => <div data-testid="mission-profile">Mocked MissionProfile</div>);
+jest.mock('../components/MissionProfile', () => () => <div data-testid="mission-profile">Mocked MissionProfile</div>);
 
 describe('MyProfile', () => {
   test('renders MyProfile component', () => {
