@@ -23,7 +23,10 @@ const Rockets = () => {
             <img src={item.flickr_images[0]} alt="rocket" />
             <div className="rocket-info">
               <h3 className="rocket-name">{item.name}</h3>
-              <p>{item.description}</p>
+              <p>
+                {item.reserved && <span className="badge">Reserved</span>}
+                {item.description}
+              </p>
               <Buttons
                 rocketId={item.id}
                 reservedStatus={item.reserved}
