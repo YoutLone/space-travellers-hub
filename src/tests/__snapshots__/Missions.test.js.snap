@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missions Component renders Missions component correctly 1`] = `
+<table
+  class="mission-container"
+>
+  <thead>
+    <tr>
+      <th>
+        <b>
+          Mission
+        </b>
+      </th>
+      <th>
+        <b>
+          Description
+        </b>
+      </th>
+      <th>
+        <b>
+          Status
+        </b>
+      </th>
+      <th>
+         
+      </th>
+    </tr>
+  </thead>
+</table>
+`;
+
+exports[`Missions Component renders Missions component with mission list correctly 1`] = `
+<table
+  class="mission-container"
+>
+  <thead>
+    <tr>
+      <th>
+        <b>
+          Mission
+        </b>
+      </th>
+      <th>
+        <b>
+          Description
+        </b>
+      </th>
+      <th>
+        <b>
+          Status
+        </b>
+      </th>
+      <th>
+         
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    class="mission"
+  >
+    <tr>
+      <td>
+        <b>
+          Mission 1
+        </b>
+      </td>
+      <td>
+        Mission 1 Description
+      </td>
+      <td>
+        <button
+          class="not-member"
+          type="button"
+        >
+          NOT A MEMBER
+        </button>
+      </td>
+      <td>
+        <button
+          class="join-mission"
+          type="submit"
+        >
+          JOIN MISSION
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tbody
+    class="mission"
+  >
+    <tr>
+      <td>
+        <b>
+          Mission 2
+        </b>
+      </td>
+      <td>
+        Mission 2 Description
+      </td>
+      <td>
+        <button
+          class="active-member"
+          type="button"
+        >
+          ACTIVE MEMBER
+        </button>
+      </td>
+      <td>
+        <button
+          class="leave-member"
+          type="submit"
+        >
+          LEAVE MISSION
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
