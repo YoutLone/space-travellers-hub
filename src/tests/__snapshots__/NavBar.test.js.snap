@@ -25,7 +25,7 @@ exports[`NavBar render NavBar component correctly 1`] = `
         <li>
           <a
             aria-current="page"
-            class="active"
+            class="active active"
             href="/"
           >
             Rockets
