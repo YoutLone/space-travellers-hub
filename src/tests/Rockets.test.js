@@ -5,15 +5,19 @@ import configureMockStore from 'redux-mock-store';
 import '@testing-library/jest-dom/extend-expect';
 import thunk from 'redux-thunk';
 import Rockets from '../components/Rockets';
-import { fetchRockets, reserveRocket, cancelReserveRocket } from '../redux/Rockets/RocketsSlice';
+import { reserveRocket, cancelReserveRocket } from '../redux/Rockets/RocketsSlice';
 
 const mockStore = configureMockStore([thunk]);
 
 const initialState = {
   rockets: {
     Rockets: [
-      { id: '1', name: 'Falcon 1', description: 'desc1', reserved: true , flickr_images: ['img1.jpg']},
-      { id: '2', name: 'Falcon 9', description: 'desc2', reserved: false, flickr_images: ['img2.jpg']},
+      {
+        id: '1', name: 'Falcon 1', description: 'desc1', reserved: true, flickr_images: ['img1.jpg'],
+      },
+      {
+        id: '2', name: 'Falcon 9', description: 'desc2', reserved: false, flickr_images: ['img2.jpg'],
+      },
     ],
   },
 };
@@ -25,7 +29,7 @@ describe('Rockets', () => {
     render(
       <Provider store={store}>
         <Rockets />
-      </Provider>
+      </Provider>,
     );
   });
 
@@ -54,7 +58,7 @@ describe('Rockets', () => {
   });
 
   test('should dispatch reserveRocket action when "Reserve Rocket" button is clicked', () => {
-   const rocketId = '2';
+    const rocketId = '2';
     const reserveButton = screen.getByText('Reserve Rocket');
     fireEvent.click(reserveButton);
     const actions = store.getActions();
@@ -68,5 +72,4 @@ describe('Rockets', () => {
     const actions = store.getActions();
     expect(actions).toContainEqual(cancelReserveRocket(rocketId));
   });
-
 });

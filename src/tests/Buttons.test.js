@@ -1,22 +1,22 @@
-import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
-import "@testing-library/jest-dom/extend-expect";
-import Buttons from "../components/Buttons";
-import { reserveRocket, cancelReserveRocket } from "../redux/Rockets/RocketsSlice";
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import '@testing-library/jest-dom/extend-expect';
+import Buttons from '../components/Buttons';
+import { reserveRocket, cancelReserveRocket } from '../redux/Rockets/RocketsSlice';
 
 const mockStore = configureStore([]);
 
-describe("Buttons Components", () => {
+describe('Buttons Components', () => {
   let store;
-  const rocketId = "1";
+  const rocketId = '1';
 
   beforeEach(() => {
     const initialState = {
       rockets: {
         Rockets: [
-          {id: rocketId},
+          { id: rocketId },
         ],
       },
     };
@@ -29,10 +29,10 @@ describe("Buttons Components", () => {
     render(
       <Provider store={store}>
         <Buttons rocketId={rocketId} reservedStatus={false} />
-      </Provider>
+      </Provider>,
     );
 
-    const reserveButton = screen.getByText("Reserve Rocket");
+    const reserveButton = screen.getByText('Reserve Rocket');
     fireEvent.click(reserveButton);
 
     expect(store.dispatch).toHaveBeenCalledWith(reserveRocket(rocketId));
@@ -42,23 +42,23 @@ describe("Buttons Components", () => {
     render(
       <Provider store={store}>
         <Buttons rocketId={rocketId} reservedStatus={false} />
-      </Provider>
+      </Provider>,
     );
-  
-    const reserveButton = screen.getByText("Reserve Rocket");
+
+    const reserveButton = screen.getByText('Reserve Rocket');
     expect(reserveButton).toBeInTheDocument();
-    });
+  });
 
   test('should dispatch "cancelReserveRocket" action when "Cancel Reservation" button is clicked', () => {
     store.dispatch = jest.fn();
 
     render(
       <Provider store={store}>
-        <Buttons rocketId={rocketId} reservedStatus={true} />
-      </Provider>
+        <Buttons rocketId={rocketId} reservedStatus />
+      </Provider>,
     );
 
-    const cancelReserveRocketButton = screen.getByText("Cancel Reservation");
+    const cancelReserveRocketButton = screen.getByText('Cancel Reservation');
     fireEvent.click(cancelReserveRocketButton);
 
     expect(store.dispatch).toHaveBeenCalledWith(cancelReserveRocket(rocketId));
@@ -67,12 +67,11 @@ describe("Buttons Components", () => {
   test("should render 'Cancel Reservation' button when the rocket is reserved'", () => {
     render(
       <Provider store={store}>
-        <Buttons rocketId={rocketId} reservedStatus={true} />
-      </Provider>
+        <Buttons rocketId={rocketId} reservedStatus />
+      </Provider>,
     );
-    
-    const cancelReserveRocketButton = screen.getByText("Cancel Reservation");
+
+    const cancelReserveRocketButton = screen.getByText('Cancel Reservation');
     expect(cancelReserveRocketButton).toBeInTheDocument();
   });
-
 });

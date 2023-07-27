@@ -9,7 +9,7 @@ describe('NavBar', () => {
     render(
       <Router>
         <NavBar />
-      </Router>
+      </Router>,
     );
   });
 
@@ -17,7 +17,7 @@ describe('NavBar', () => {
     const { getByAltText, getByText } = render(
       <Router>
         <NavBar />
-      </Router>
+      </Router>,
     );
     const logo = getByAltText('logo');
     expect(logo).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('NavBar', () => {
     const { getByText } = render(
       <Router>
         <NavBar />
-      </Router>
+      </Router>,
     );
     const links = [
       { path: '/', text: 'Rockets' },
@@ -49,9 +49,8 @@ describe('NavBar', () => {
     const { asFragment } = render(
       <Router>
         <NavBar />
-      </Router>
+      </Router>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
-
 });
