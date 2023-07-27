@@ -47,15 +47,11 @@ li :-webkit-any-link {
   color: #0290ff;
 }
 
-li:active :-webkit-any-link {
-  text-decoration: underline;
-}
-
-li:visited :-webkit-any-link {
-  text-decoration: underline;
-}
-
 .nav-bar > .nav-link > li:last-child {
   padding-left: 1rem;
   border-left: 2px solid #969595;
+}
+
+.nav-link .active {
+  text-decoration: underline;
 }
