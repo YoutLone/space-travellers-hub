@@ -80,7 +80,7 @@ This is a Space Travelers application developed by using REACT. The app serves a
 <!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Coming Soon !!
+- [Live Demo Link](https://space-travellers-hub-uw83.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
