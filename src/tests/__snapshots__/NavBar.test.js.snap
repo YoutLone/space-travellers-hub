@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar render NavBar component correctly 1`] = `
+<DocumentFragment>
+  <header
+    class="navbar-container"
+  >
+    <nav
+      class="nav-bar"
+    >
+      <div
+        class="logo"
+      >
+        <img
+          alt="logo"
+          src="\\\\resource\\\\planet.png"
+        />
+        <h1>
+          Space Travelers' Hub
+        </h1>
+      </div>
+      <ul
+        class="nav-link"
+      >
+        <li>
+          <a
+            aria-current="page"
+            class="active"
+            href="/"
+          >
+            Rockets
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/missions"
+          >
+            Missions
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/my-profile"
+          >
+            My Profile
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</DocumentFragment>
+`;

@@ -7,11 +7,13 @@ const RocketProfile = () => {
   return (
     <section>
       <table className="profile-list-rocket">
-        {reservedRocketsList.map((item) => (
-          <tr key={item.id}>
-            <td>{item.name}</td>
-          </tr>
-        ))}
+        <tbody>
+          {reservedRocketsList.map((item) => (
+            <tr key={item.id}>
+              <td>{item.name}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </section>
   );

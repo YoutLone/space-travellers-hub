@@ -18,6 +18,7 @@ const Rockets = () => {
         <section key={item.id} className="rocket-list">
           <div
             className="rocket-item"
+            data-testid="rocket-item"
             key={item.id}
           >
             <img src={item.flickr_images[0]} alt="rocket" />
